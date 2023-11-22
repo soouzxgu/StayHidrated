@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:backgroundTint="#1389E4"
-        android:onClick="imc"
+        android:onClick="validarCampos"
         android:text="Cadastrar"
         android:textAllCaps="true"
         android:textSize="16sp"

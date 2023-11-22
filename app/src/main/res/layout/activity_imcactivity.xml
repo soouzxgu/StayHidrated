@@ -30,22 +30,6 @@
         android:textStyle="bold"/>
 
     <EditText
-        android:id="@+id/idade_imc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/background_texto"
-        android:drawablePadding="6dp"
-        android:ems="10"
-        android:hint="Idade"
-        android:inputType="text"
-        android:padding="10dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textColorHint="#EFEFEF"
-        android:textSize="16sp" />
-
-    <EditText
         android:id="@+id/peso_imc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

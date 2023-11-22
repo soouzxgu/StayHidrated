@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "686042435469",
+    "project_id": "stayhidrated-3c299",
+    "storage_bucket": "stayhidrated-3c299.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686042435469:android:ce25aec6b425eacb3a37c4",
+        "android_client_info": {
+          "package_name": "com.example.stayhidrated"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsc2kAtWjwIBCobSCys6p7ceoyopG6hCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
