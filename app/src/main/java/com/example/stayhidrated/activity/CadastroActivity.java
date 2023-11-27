@@ -42,12 +42,6 @@ public class CadastroActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void imc (View v){
-
-        Intent i = new Intent(this,IMCActivity.class);
-        startActivity(i);
-    }
-
     private void inicializar(){
 
         campoNome = findViewById(R.id.nome_cadastro);
@@ -108,6 +102,8 @@ public class CadastroActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(CadastroActivity.this, "Sucesso ao cadastrar o usuário!", Toast.LENGTH_SHORT).show();
 
+                    abrirIMC();
+
                 }else{
 
                     String excecao = "";
@@ -139,6 +135,12 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void abrirIMC() {
+
+        Intent i = new Intent(CadastroActivity.this,IMCActivity.class);
+        startActivity(i);
     }
 
 }

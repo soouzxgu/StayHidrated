@@ -62,12 +62,13 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/bt_calcular"
+        android:id="@+id/btCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="#1389E4"
+        android:onClick="voltar"
         android:text="Calcular"
         android:textAlignment="center"
         android:textAllCaps="true"
