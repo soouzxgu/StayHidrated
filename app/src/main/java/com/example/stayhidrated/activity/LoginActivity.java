@@ -1,7 +1,6 @@
 package com.example.stayhidrated.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.stayhidrated.R.id.senha_login;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,19 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.stayhidrated.R;
 import com.example.stayhidrated.Util.ConfigBD;
 import com.example.stayhidrated.model.Usuario;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
-    EditText campoEmail,campoSenha;
+    EditText campoEmail, campoSenha;
     Button btAcessar;
     private FirebaseAuth auth;
 
@@ -31,10 +31,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        iniciarComponetes();
         auth = ConfigBD.Firebaseautenticador();
-        iniciarComponentes();
     }
-
 
     public void validarAutenticacao(View view){
 
@@ -69,38 +68,35 @@ public class LoginActivity extends AppCompatActivity {
 
         auth.signInWithEmailAndPassword(
                 usuario.getEmail(), usuario.getSenha()
-        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+        ).addOnCompleteListener(task -> {
 
-                if(task.isSuccessful()){
+            if(task.isSuccessful()){
 
-                    abrirHome();
+                abrirHome();
 
-                }else{
+            }else{
 
-                    String excecao="";
+                String excec;
 
-                    try{
+                try{
 
-                        throw task.getException();
+                    throw Objects.requireNonNull(task.getException());
 
-                    }catch(FirebaseAuthInvalidUserException e){
+                }catch(FirebaseAuthInvalidUserException e){
 
-                        excecao = "Usuário não cadastrado!";
+                    excec = "Usuário não cadastrado!";
 
-                    }catch(FirebaseAuthInvalidCredentialsException e){
+                }catch(FirebaseAuthInvalidCredentialsException e){
 
-                        excecao = "E-mail ou senha incorreto!";
+                    excec = "E-mail ou senha incorreto!";
 
-                    }catch(Exception e){
+                }catch(Exception e){
 
-                        excecao = "Erro ao acessar!"+e.getMessage();
-                        e.printStackTrace();
-                    }
-
-                    Toast.makeText(LoginActivity.this, excecao, Toast.LENGTH_SHORT).show();
+                    excec = "Erro ao acessar!"+e.getMessage();
+                    e.printStackTrace();
                 }
+
+                Toast.makeText(LoginActivity.this, excec, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -117,12 +113,13 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    @SuppressLint("WrongViewCast")
-    private void iniciarComponentes(){
+    private void iniciarComponetes(){
 
         campoEmail = findViewById(R.id.email_login);
         campoSenha = findViewById(R.id.senha_login);
-        btAcessar = findViewById(R.id.btCalcular);
+        btAcessar = findViewById(R.id.btAcessar);
     }
+
+
 
 }

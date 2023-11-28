@@ -102,8 +102,6 @@ public class CadastroActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(CadastroActivity.this, "Sucesso ao cadastrar o usuário!", Toast.LENGTH_SHORT).show();
 
-                    abrirIMC();
-
                 }else{
 
                     String excecao = "";
@@ -135,12 +133,6 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void abrirIMC() {
-
-        Intent i = new Intent(CadastroActivity.this,IMCActivity.class);
-        startActivity(i);
     }
 
 }

@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StayHidrated"
         tools:targetApi="34">
+
         <activity
             android:name=".activity.PrincipalActivity"
             android:exported="false" />
@@ -25,6 +26,7 @@
         <activity
             android:name=".activity.LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

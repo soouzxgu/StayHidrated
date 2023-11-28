@@ -12,7 +12,7 @@ import com.example.stayhidrated.R;
 
 public class IMCActivity extends AppCompatActivity {
 
-    private EditText campoPeso, campoAltura;
+    EditText campoPeso, campoAltura;
     Button btCalcular;
 
     @Override
@@ -20,15 +20,13 @@ public class IMCActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imcactivity);
 
-        campoPeso = (EditText) findViewById(R.id.peso_imc);
-        campoAltura = (EditText) findViewById(R.id.altura_imc);
-        btCalcular = (Button) findViewById(R.id.btCalcular);
+        campoPeso = findViewById(R.id.peso_imc);
+        campoAltura = findViewById(R.id.altura_imc);
+        btCalcular = findViewById(R.id.btCalcular);
 
         btCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(IMCActivity.this, PrincipalActivity.class);
 
                 double peso = Double.parseDouble(campoPeso.getText().toString());
                 double altura = Double.parseDouble(campoAltura.getText().toString());
