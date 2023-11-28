@@ -12,30 +12,60 @@ import com.example.stayhidrated.R;
 
 public class IMCActivity extends AppCompatActivity {
 
-    EditText campoPeso, campoAltura;
+    private EditText campoPeso, campoAltura;
     Button btCalcular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imcactivity);
+
+        campoPeso = (EditText) findViewById(R.id.peso_imc);
+        campoAltura = (EditText) findViewById(R.id.altura_imc);
+        btCalcular = (Button) findViewById(R.id.btCalcular);
+
+        btCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(IMCActivity.this, PrincipalActivity.class);
+
+                double peso = Double.parseDouble(campoPeso.getText().toString());
+                double altura = Double.parseDouble(campoAltura.getText().toString());
+                double imc = peso / (altura * altura);
+
+                    if(imc < 18.5){
+
+                        imc = 200;
+                    }
+
+                    else if(imc >= 18.5 && imc > 25){
+
+                        imc = 250;
+
+                    }
+
+                    else if(imc >=25 && imc > 30){
+
+                        imc = 350;
+
+                    }
+
+                    else if(imc>=30 && imc > 40){
+
+                        imc = 400;
+
+                    }
+
+            }
+        });
+
     }
 
     public void voltar (View v){
 
-        Intent i = new Intent(this,CadastroActivity.class);
+        Intent i = new Intent(this,LoginActivity.class);
         startActivity(i);
     }
 
-    private void inicializar(){
-
-        campoPeso = findViewById(R.id.peso_imc);
-        campoAltura = findViewById(R.id.altura_imc);
-
     }
-
-    public void calcularIMC(){
-
-
-    }
-}

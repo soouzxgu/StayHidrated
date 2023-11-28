@@ -23,11 +23,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="Informações do Usuário"
+        android:text="Medidas do Usuário"
         android:textAlignment="center"
         android:textColor="#CDCDCD"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/peso_imc"

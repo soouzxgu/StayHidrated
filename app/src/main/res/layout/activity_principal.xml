@@ -16,8 +16,8 @@
         android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="40dp"
         android:text="Olá,"
         android:textAlignment="textStart"
         android:textColor="#CDCDCD"
@@ -28,7 +28,7 @@
         android:id="@+id/txt_ingerida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="Quantidade a ser ingerida (ml):"
         android:textAlignment="center"
@@ -37,7 +37,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/qntd_ingerida"
+        android:id="@+id/campoIMC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_texto"
@@ -78,23 +78,11 @@
         android:textColorHint="#A6A6A6"
         android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/txt_lembretes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
-        android:text="Lembretes:"
-        android:textAlignment="textStart"
-        android:textColor="#CDCDCD"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
     <Button
         android:id="@+id/btCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="#1389E4"
         android:text="BEBI ÁGUA!"
