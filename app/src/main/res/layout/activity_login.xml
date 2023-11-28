@@ -29,7 +29,8 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/email_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,10 +43,9 @@
         android:inputType="text|textWebEmailAddress"
         android:padding="10dp"
         android:textColor="@color/white"
-        android:textColorHint="#F6F0F2"
-        android:textSize="18sp"/>
+        android:textColorHint="#F6F0F2" />
 
-    <TextView
+    <EditText
         android:id="@+id/senha_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,17 +58,16 @@
         android:inputType="text|textPassword"
         android:padding="10dp"
         android:textColor="@color/white"
-        android:textColorHint="#F6F0F2"
-        android:textSize="18sp" />
+        android:textColorHint="#F6F0F2" />
 
     <Button
-        android:id="@+id/btCalcular"
+        android:id="@+id/btAcessar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:backgroundTint="#1389E4"
         android:onClick="validarAutenticacao"
-        android:text="Entrar"
+        android:text="Acessar"
         android:textAllCaps="true"
         android:textSize="16sp"
         android:textStyle="bold" />
